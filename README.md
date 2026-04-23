@@ -1,6 +1,4 @@
-# DPI Engine - Deep Packet Inspection System (Java)
-
-This README is a full Java-only guide to the DPI engine in this repository.
+# DPI Engine - Deep Packet Inspection System
 
 It covers:
 
