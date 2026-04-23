@@ -11,6 +11,20 @@ It covers:
 - end-to-end packet journey
 - CLI usage, build, run, and output interpretation
 
+## Overview
+
+This is a Java Deep Packet Inspection (DPI) engine for offline packet analysis.
+It reads `.pcap` captures, parses packets across multiple layers, extracts
+application-level metadata (TLS SNI / HTTP Host), classifies traffic, applies
+blocking rules, and writes a filtered output PCAP.
+
+## Real-World Usage
+
+- Network monitoring and traffic visibility
+- Security analysis and policy validation
+- Offline rule testing before production rollout
+- Teaching and interview demos for TCP/IP, HTTP/HTTPS, DNS, and flow tracking
+
 ---
 
 ## Table of Contents
@@ -598,6 +612,28 @@ Possible Java-only roadmap:
 5. QUIC/HTTP3 heuristics
 6. JUnit tests for parser and extractors
 7. Per-flow export (JSON/CSV report)
+8. Kubernetes deployment for orchestration demos
+9. Real-time capture mode (instead of offline-only PCAP input)
+10. Dashboard for live/near-live analytics
+
+---
+
+## Tech Stack
+
+- Java 17
+- Maven
+- PCAP binary parsing (custom parser/writer)
+- Networking protocols: Ethernet, IPv4, TCP/UDP, DNS, HTTP, TLS SNI
+
+---
+
+## Key Learnings
+
+- Byte-level packet parsing and protocol decoding
+- End-to-end packet flow from link layer to application metadata
+- Stateful flow tracking using five-tuple keys
+- HTTPS classification via TLS ClientHello SNI
+- Rule-based filtering by IP, application, and domain substring
 
 ---
 
