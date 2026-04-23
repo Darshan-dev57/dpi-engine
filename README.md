@@ -67,7 +67,8 @@ For each packet, it:
 
 ## 2. High-Level Architecture Diagram
 
-```╔══════════════════════════════════════════════════════════════╗
+```text
+╔══════════════════════════════════════════════════════════════╗
 ║              HIGH-LEVEL ARCHITECTURE                         ║
 ╚══════════════════════════════════════════════════════════════╝
 
@@ -107,6 +108,7 @@ For each packet, it:
        │
        ▼
   output.pcap
+```
 
 ---
 
@@ -282,9 +284,9 @@ java -jar target/dpi-engine-1.0.0-jar-with-dependencies.jar <input.pcap> <output
 
 Supported options:
 
-- `--block-ip=<ipv4>`
-- `--block-app=<APP>`
-- `--block-domain=<substring>`
+- `--block-ip <ipv4>` or `--block-ip=<ipv4>`
+- `--block-app <APP>` or `--block-app=<APP>`
+- `--block-domain <substring>` or `--block-domain=<substring>`
 - `--help` / `-h`
 
 ### Step 2: Open files
@@ -537,9 +539,9 @@ Usage:
 	java -jar target/dpi-engine-1.0.0-jar-with-dependencies.jar <input.pcap> <output.pcap> [options]
 
 Options:
-	--block-ip=<ipv4>         Block traffic by source IP
-	--block-app=<appType>     Block traffic by app (e.g. YOUTUBE, NETFLIX)
-	--block-domain=<domain>   Block traffic by domain/SNI substring
+	--block-ip <ipv4> / --block-ip=<ipv4>       Block traffic by source IP
+	--block-app <appType> / --block-app=<appType>   Block traffic by app (e.g. YOUTUBE, NETFLIX)
+	--block-domain <domain> / --block-domain=<domain> Block traffic by domain/SNI substring
 	--help, -h                Show help
 ```
 
@@ -559,6 +561,12 @@ java -jar target/dpi-engine-1.0.0-jar-with-dependencies.jar test_dpi.pcap output
 java -jar target/dpi-engine-1.0.0-jar-with-dependencies.jar test_dpi.pcap output.pcap --block-app=YOUTUBE
 ```
 
+Equivalent form:
+
+```bash
+java -jar target/dpi-engine-1.0.0-jar-with-dependencies.jar test_dpi.pcap output.pcap --block-app YOUTUBE
+```
+
 ### Block app + domain + source IP
 
 ```bash
@@ -568,7 +576,7 @@ java -jar target/dpi-engine-1.0.0-jar-with-dependencies.jar test_dpi.pcap output
 ### Quick local workspace test
 
 ```bash
-java -jar target/dpi-engine-1.0.0-jar-with-dependencies.jar ../Packet_analyzer/test_dpi.pcap sample_output.pcap
+java -jar target/dpi-engine-1.0.0-jar-with-dependencies.jar ../../Packet_analyzer/test_dpi.pcap sample_output.pcap
 ```
 
 ---
